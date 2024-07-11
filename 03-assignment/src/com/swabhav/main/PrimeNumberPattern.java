@@ -29,7 +29,7 @@ public class PrimeNumberPattern {
 		Scanner scanner = new Scanner(System.in);
 		PrimeNumberPattern primeNumberPattern = new PrimeNumberPattern();
 		System.out.println("Enter Number of lines :");
-		int currentPrime = 1;
+		int currentPrime = 2															;
 		int lines = scanner.nextInt();
 		for (int i = 1; i <= lines; i++) {
 			for (int j = 0; j < i; j++) {
