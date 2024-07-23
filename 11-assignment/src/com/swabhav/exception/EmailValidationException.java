@@ -1,5 +1,8 @@
 package com.swabhav.exception;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class EmailValidationException extends RuntimeException {
 
     public EmailValidationException(String message) {
@@ -12,14 +15,17 @@ public class EmailValidationException extends RuntimeException {
             throw new EmailValidationException("Email cannot be null or empty.");
         }
 
-        // Check length of email
-        if (email.length() < 5 || email.length() > 50) {
-            throw new EmailValidationException("Email length should be between 5 and 50 characters.");
-        }
+        //Regular Expression   
+        // another regex: "(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)"
+        String regex = "^((?!\\.)[\\w\\-_.]*[^.])(@\\w+)(\\.\\w+(\\.\\w+)?[^.\\W])$";  
+  
+        //Compile regular expression to get the pattern  
+        Pattern pattern = Pattern.compile(regex);  
+        Matcher match = pattern.matcher(email);
 
-        // Check if email contains '@' and '.'
-        if (!email.contains("@") || !email.contains(".")) {
-            throw new EmailValidationException("Email must contain '@' and '.'.");
+        if(!match.find()) {
+        	throw new EmailValidationException("Email not valid.");
         }
+        
     }
 }
