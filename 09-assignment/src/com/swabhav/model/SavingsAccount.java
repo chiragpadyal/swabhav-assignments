@@ -20,10 +20,11 @@ public class SavingsAccount extends Account{
 	
 	@Override
 	public void debit(double amount) {
-		if(this.getBalance() <= MIN_BALANCE) {
+		if(this.getBalance() <= MIN_BALANCE || this.getBalance() - amount <= MIN_BALANCE) {
 			System.out.println("Can't withdraw below minimum balance");
 			return;
 		};
+		
 		super.debit(amount);
 	}
 	
