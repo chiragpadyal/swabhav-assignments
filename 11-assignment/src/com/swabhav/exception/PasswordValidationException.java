@@ -30,7 +30,7 @@ public class PasswordValidationException extends RuntimeException {
             if (Character.isUpperCase(c)) {
                 hasUpperCase = true;
             }
-            if (((int) c) >= 0 && ((int) c) <= 9) {
+            if (Character.isDigit(c)) {
             	hasNumber = true;
             }
         }
