@@ -14,6 +14,22 @@ public class BookTest {
 		List<Book> books = new ArrayList<Book>();
 		addBooks(scanner, books);
 		showBooks(books);
+
+		System.out.println("---------- Sort By Author -------------");
+		books.sort(new BookComparator.BookAuthorComparator());
+		showBooks(books);
+		
+		System.out.println("---------- Sort By Title -------------");
+		books.sort(new BookComparator.BookTitleComparator());
+		showBooks(books);
+		
+		System.out.println("---------- Sort By Price -------------");
+		books.sort(new BookComparator.BookPriceComparator());
+		showBooks(books);
+		
+		System.out.println("---------- Sort By Year -------------");
+		books.sort(new BookComparator.BookPublicationYearComparator());
+		showBooks(books);
 		
 		System.out.println("---------- Sort By Author, Title and Price -------------");
 		sortByAuthorByTitleByPrice(books);
