@@ -87,7 +87,7 @@ public class WinChecker {
 	}
 	
 	private static boolean checkIfAllSame(Players player, List<Position> positions, Board board) {
-		if(positions.size() < 3) return false;
+		if(positions.size() < 3 && positions.size() < board.getBoardSize() - 1) return false;
 		for (Position position : positions) {
 			if(board.getValue(position) != player.getValue()) {
 				return false;

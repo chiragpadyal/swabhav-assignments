@@ -42,14 +42,6 @@ public class Board implements IBoard {
 		return output;
 	}
 	
-	public void fillBoard() {
-		if(boardSize == 4) {
-			board[0][2] = 1;
-			board[1][1] = 1;
-			board[2][0] = 1;
-			board[2][2] = -1;
-			board[3][3] = 0;
-		}
-	}
+
 
 }
