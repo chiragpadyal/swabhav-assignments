@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.swabhav.bank.entities.Customer;
+import com.swabhav.bank.entities.Loan;
 import com.swabhav.bank.services.CustomerService;
 
 @RestController
@@ -24,12 +24,12 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@GetMapping("customers")
-	public ResponseEntity<List<Customer>> getAllCustomers() {
+	public ResponseEntity<List<Loan>> getAllCustomers() {
 		return ResponseEntity.ok(customerService.getAllCustomer());
 	}
 	
 	@GetMapping("customer/{customerId}")
-	public ResponseEntity<Customer> getCustomer(@PathVariable int customerId){
+	public ResponseEntity<Loan> getCustomer(@PathVariable int customerId){
 		return ResponseEntity.ok(customerService.getCustomer(customerId));
 	}
 	
@@ -40,13 +40,13 @@ public class CustomerController {
 	}
 	
 	@PutMapping("customer")
-	public ResponseEntity<String> updateCustomer(@RequestBody Customer customer){
+	public ResponseEntity<String> updateCustomer(@RequestBody Loan customer){
 		customerService.updateCustomer(customer);
 		return ResponseEntity.ok("done");
 	}
 	
 	@PostMapping("customer")
-	public ResponseEntity<String> insertCustomer(@RequestBody Customer customer){
+	public ResponseEntity<String> insertCustomer(@RequestBody Loan customer){
 		customerService.insertCustomer(customer);
 		return ResponseEntity.ok("done");
 	}

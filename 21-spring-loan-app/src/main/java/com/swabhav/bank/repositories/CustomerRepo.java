@@ -2,7 +2,6 @@ package com.swabhav.bank.repositories;
 
 import java.util.List;
 
-
 import com.swabhav.bank.entities.Customer;
 
 public interface CustomerRepo {

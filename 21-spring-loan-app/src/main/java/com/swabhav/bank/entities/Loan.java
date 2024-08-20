@@ -7,66 +7,76 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+
 @Entity
 public class Loan {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int customerId;
-	String firstName;
-	String lastName;
-	Date dateOfBirth;
-	String emailId;
-	String mobileNumber;
-	public int getCustomerId() {
-		return customerId;
+	int loanId;
+	double loanAmount;
+	double interestRate;
+	Date startDate;
+	Date endDate;
+	int loanTerm;
+	boolean loanStatus;
+	public int getLoanId() {
+		return loanId;
 	}
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	public void setLoanId(int loanId) {
+		this.loanId = loanId;
 	}
-	public String getFirstName() {
-		return firstName;
+	public double getLoanAmount() {
+		return loanAmount;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setLoanAmount(double loanAmount) {
+		this.loanAmount = loanAmount;
 	}
-	public String getLastName() {
-		return lastName;
+	public double getInterestRate() {
+		return interestRate;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
 	}
-	public Date getDateOfBirth() {
-		return dateOfBirth;
+	public Date getStartDate() {
+		return startDate;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
-	public String getEmailId() {
-		return emailId;
+	public Date getEndDate() {
+		return endDate;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
-	public String getMobileNumber() {
-		return mobileNumber;
+	public int getLoanTerm() {
+		return loanTerm;
 	}
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setLoanTerm(int loanTerm) {
+		this.loanTerm = loanTerm;
 	}
-	public Loan(int customerId, String firstName, String lastName, Date dateOfBirth, String emailId,
-			String mobileNumber) {
+	public boolean isLoanStatus() {
+		return loanStatus;
+	}
+	public void setLoanStatus(boolean loanStatus) {
+		this.loanStatus = loanStatus;
+	}
+	public Loan(int loanId, double loanAmount, double interestRate, Date startDate, Date endDate, int loanTerm,
+			boolean loanStatus) {
 		super();
-		this.customerId = customerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.dateOfBirth = dateOfBirth;
-		this.emailId = emailId;
-		this.mobileNumber = mobileNumber;
+		this.loanId = loanId;
+		this.loanAmount = loanAmount;
+		this.interestRate = interestRate;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.loanTerm = loanTerm;
+		this.loanStatus = loanStatus;
 	}
 	public Loan() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
+	
+	
+	
 }

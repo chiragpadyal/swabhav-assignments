@@ -2,6 +2,7 @@ package com.swabhav.bank.repositories;
 
 import java.util.List;
 
+import com.swabhav.bank.entities.Customer;
 import com.swabhav.bank.entities.Loan;
 
 public interface LoanRepo {
