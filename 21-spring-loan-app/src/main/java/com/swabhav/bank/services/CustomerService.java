@@ -9,4 +9,6 @@ public interface CustomerService {
 	void deleteCustomer(int customerId);
 	void updateCustomer(Customer customer);
 	void insertCustomer(Customer customer);
+	List<Customer> findCustomers(Customer customer);
+
 }

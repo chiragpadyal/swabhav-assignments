@@ -43,6 +43,12 @@ public class CustomerServiceImpl implements CustomerService {
 		// TODO Auto-generated method stub
 		customerRepo.insertCustomer(customer);
 	}
+
+	@Override
+	public List<Customer> findCustomers(Customer customer) {
+		// TODO Auto-generated method stub
+		return customerRepo.findCustomers(customer);
+	}
 	
 	
 }

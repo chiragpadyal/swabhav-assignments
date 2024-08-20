@@ -33,6 +33,11 @@ public class CustomerController {
 		return ResponseEntity.ok(customerService.getCustomer(customerId));
 	}
 	
+	@GetMapping("customers/similar")
+	public ResponseEntity<List<Customer>> findCustomers(@RequestBody Customer customer){
+		return ResponseEntity.ok(customerService.findCustomers(customer));
+	}
+	
 	@DeleteMapping("customer/{customerId}")
 	public ResponseEntity<String> deleteCustomer(@PathVariable int customerId){
 		customerService.deleteCustomer(customerId);
